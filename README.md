@@ -5,7 +5,7 @@ The `Experience` sets up the main rendering pipeline and brings together all of 
 
 This particular project simply has a camera pointed at a `THREE.PlaneGeometry` with a simple shader - mapping `uv` coordinates to the `gl_FragColor`. 
 
-This is meant to be iterated upon.
+
 
 ### How to use:
 1. Clone this repo using `git clone` in the CLI with the URL
@@ -28,3 +28,5 @@ This is meant to be iterated upon.
     npm run dev
     ```
     This should run an instance on port 5173, or the next available.
+
+6. When creating a class which inherits from the central `Experience` class, call `Experience.getInstance()` to utilise the singleton. The central `Experience` class contains some helpers such as `sizes`, `time`, and `mouse`. 
