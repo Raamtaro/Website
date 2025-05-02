@@ -8,14 +8,22 @@ This particular project simply has a camera pointed at a `THREE.PlaneGeometry` w
 This is meant to be iterated upon.
 
 ### How to use:
-1. Fork/Copy (please fork if you're an outsider) this repo using `git clone` in the CLI
+1. Clone this repo using `git clone` in the CLI with the URL
+   
+2. `cd` to the root of this project and then run the following in the CLI:
+    ```
+    git remote remove origin
+    ```
+    This will free up the repo from the original github project
 
-2. Run, in the CLI:
+3. Follow the directions here to hook it up to a new Github Repo: https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github
+
+4. Whenever you're done with step 3, run, in the CLI:
     ```
     npm install
     ```
 
-3. Next, run:
+5. Next, run:
     ```
     npm run dev
     ```
