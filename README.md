@@ -30,3 +30,5 @@ This particular project simply has a camera pointed at a `THREE.PlaneGeometry` w
     This should run an instance on port 5173, or the next available.
 
 6. When creating a class which inherits from the central `Experience` class, call `Experience.getInstance()` to utilise the singleton. The central `Experience` class contains some helpers such as `sizes`, `time`, and `mouse`. 
+
+7. **BONUS** To use the `Resources` emitter, you'll need to supply the `sources.ts` module with objects which follow the `ModelInfo` interface from `type.ts`. I included a couple of examples for convenience - please note that I removed the .glb files from the `models` directory to save space in the repo. Put your .glb files wherever makes most sense to you, and be aware of the public path configuration in the `vite.config.ts` file.
