@@ -1,14 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
+@import "tailwindcss";
 
-  overscroll-behavior: none;
-}
 
 html, body{
   height: 100%;
   
-  background: black;
+  /* background: black; */
 
   
 }
@@ -19,11 +15,9 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
-
-  /* scroll-snap-type: y mandatory;
-  scroll-snap-align: start; */
-  /* outline: 2px solid red; */
 }
+
+/* Lenis Styling */
 
 html.lenis,
 html.lenis body {
@@ -46,12 +40,28 @@ overflow: clip;
 pointer-events: none;
 }
 
+/* THREE/WebGL canvas styling */
+
 canvas {
   position: fixed;
   top: 0;
   left: 0;
   outline: none;
-  
-
+  z-index: -1;
 }
 
+/* Website content common styling */
+
+section {
+  /* position: relative; */
+  min-height: 100vh;
+  
+
+  /* mix-blend-mode: difference; */
+}
+
+/* section>div {
+  position: relative;
+
+  color: #f3ecf6;
+} */

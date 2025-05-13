@@ -36,7 +36,7 @@ class HelloWorld {
     }
 
     private init(): void {
-        this.scene.add(this.instance)
+        // this.scene.add(this.instance)
     }
 }
 
