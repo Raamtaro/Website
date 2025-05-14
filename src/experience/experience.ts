@@ -9,6 +9,9 @@ import Renderer from './renderer.ts';
 import Camera from './camera.ts';
 
 import HelloWorld from './helloWorld/helloWorld.ts';
+import Text from './TroikaText/Text.ts';
+
+import Glass from './Glass/Glass.ts';
 
 
 
@@ -36,6 +39,8 @@ class Experience {
     public mouse: Mouse
     public scene: THREE.Scene
     public helloWorld: HelloWorld
+    public text: Text
+    public glass: Glass
 
     // private rendererables: (Points | Mesh)[] = []
     // private scenes: SceneObject[] = []
@@ -53,6 +58,12 @@ class Experience {
         this.scene = new THREE.Scene()
 
         this.helloWorld = new HelloWorld()
+        this.text = new Text('RAAM SANGHANI')
+
+
+        this.glass = new Glass(new THREE.TorusGeometry(1, .4, 64, 64))
+
+        this.glass.instance.position.set(0, 0, 2.5)
 
         this.time.on('tick', this.render.bind(this)) 
     }

@@ -32,7 +32,7 @@ class Text {
     private async init(): Promise<void>{
         this.loadFont().then((mesh) => {
             this.instance = mesh;
-            this.instance.position.set(-1.0, 0.0, -.5);
+            this.instance.position.set(-1.45, 0.0, -.5);
             this.experience.scene.add(this.instance);
         }).catch((error) => {
             console.error('Error loading font:', error);
@@ -46,7 +46,7 @@ class Text {
                 (font) => {
                     const geometry = new TextGeometry(this._text, {
                         font: font,
-                        size: 0.175,
+                        size: 0.275,
                         depth: 0.01
                         
                     });

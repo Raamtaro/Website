@@ -15,6 +15,7 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow: none;
 }
 
 /* Lenis Styling */
@@ -48,12 +49,13 @@ canvas {
   left: 0;
   outline: none;
   z-index: -1;
+  
 }
 
 /* Website content common styling */
 
 section {
-  /* position: relative; */
+  position: relative;
   min-height: 100vh;
   
 

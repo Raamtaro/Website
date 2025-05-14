@@ -28,7 +28,7 @@ class main {
     }
 
     public init(): void {
-
+        console.log(this.lenis, this.experience, this.portfolio);
     }
 }
 

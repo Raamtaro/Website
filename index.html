@@ -5,13 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raam.dev</title>
     <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="./node_modules/devicon/devicon.min.css">
     <script type="module" src="./src/main.ts" defer></script>
 </head>
 <body>
     <canvas class="webGl"></canvas>
-    <section><div>Landing</div></section>
-    <section><div>About</div></section>
+    <section>Landing</section>
+    <section
+    class="About max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
+  >
+    <!-- Left: your description -->
+    <div class="prose prose-lg flex flex-col gap-5 justify-start">
+      <h2 class="text-3xl font-semibold mb-4 mix-blend-difference text-white">About Me</h2>
+      <p class="mix-blend-difference text-white text-lg">
+        Hey, I'm Raam—a full-stack dev and yoga nerd. I build interactive
+        WebGL scenes with Three.js, dabble in Solidity for NFT minting, and
+        spin up server-side UIs with Express and React/Next.js. When I'm not
+        coding, you'll find me on the mat or deep in a Vite-powered playlist.
+      </p>
+      <p class="mix-blend-difference text-white text-lg">
+        I'm always chasing that sweet spot where art meets code. Whether it's
+        prototyping shaders or sculpting yoga flows, I love projects that
+        react to input—be it audio, motion, or user controls.
+      </p>
+    </div>
+  
+    <!-- Right: skills grid -->
+    <div
+      id="skills"
+      class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-15 place-items-center"
+    >
+      <i class="devicon-html5-plain colored mix-blend-difference text-5xl"></i>
+      <i class="devicon-css3-plain colored mix-blend-difference text-5xl"></i>
+      <i class="devicon-javascript-plain colored mix-blend-difference text-5xl"></i>
+      <i class="devicon-typescript-plain colored mix-blend-difference text-5xl"></i>
+      <i class="devicon-react-original colored mix-blend-difference text-5xl"></i>
+      <i class="devicon-nextjs-plain text-white mix-blend-difference text-5xl"></i>
+      <i class="devicon-vitejs-plain colored mix-blend-difference text-5xl"></i>
+      <i class="devicon-nodejs-plain colored mix-blend-difference text-5xl"></i>
+      <i class="devicon-express-original text-white mix-blend-difference text-5xl"></i>
+      <i class="devicon-postgresql-plain colored mix-blend-difference text-5xl"></i>
+      <i class="devicon-threejs-original text-white mix-blend-difference text-5xl"></i>
+      <i class="devicon-python-plain colored mix-blend-difference text-5xl"></i>
+      <i class="devicon-solidity-plain text-white mix-blend-difference text-5xl"></i>
+      <i class="devicon-git-plain colored mix-blend-difference text-5xl"></i>
+      <i class="devicon-github-original text-white mix-blend-difference text-5xl"></i>
+      <i class="devicon-vscode-plain colored mix-blend-difference text-5xl"></i>
+    </div>
+  </section>
     <section class="Projects "></section>
-    <section><div>Contact</div></section>
+    <section>Contact</section>
 </body>
 </html>
