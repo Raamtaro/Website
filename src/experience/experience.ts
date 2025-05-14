@@ -8,7 +8,7 @@ import Mouse from '../utils/mouse.ts';
 import Renderer from './renderer.ts';
 import Camera from './camera.ts';
 
-import HelloWorld from './helloWorld/helloWorld.ts';
+
 import Text from './TroikaText/Text.ts';
 
 import Glass from './Glass/Glass.ts';
@@ -38,7 +38,7 @@ class Experience {
     public camera: Camera
     public mouse: Mouse
     public scene: THREE.Scene
-    public helloWorld: HelloWorld
+
     public text: Text
     public glass: Glass
 
@@ -57,7 +57,6 @@ class Experience {
         this.renderer = new Renderer()
         this.scene = new THREE.Scene()
 
-        this.helloWorld = new HelloWorld()
         this.text = new Text('RAAM SANGHANI')
 
 
