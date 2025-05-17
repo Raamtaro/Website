@@ -1,17 +1,15 @@
 import * as THREE from 'three'
+import { Font } from 'three/examples/jsm/Addons.js';
 import Sizes from '../utils/emitters/sizes';
 import TimeKeeper from '../utils/emitters/timeKeeper';
 import Mouse from '../utils/mouse.ts';
 import Renderer from './renderer.ts';
 import Camera from './camera.ts';
 import Glass from './Glass/Glass.ts';
-
-import type { ResourceFile } from '../utils/emitters/data/type.ts';
 import Resources from '../utils/emitters/resources.ts';
 import TextV2 from './TextV2/textv2.ts';
-import { Font, GLTF } from 'three/examples/jsm/Addons.js';
 
-
+// import type { ResourceFile } from '../utils/emitters/data/type.ts';
 
 
 declare global {

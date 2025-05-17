@@ -7,6 +7,8 @@ import TimeKeeper from "../../utils/emitters/timeKeeper"
 import vertexShader from './shaders/vertex.glsl'
 import fragmentShader from './shaders/fragment.glsl'
 
+// import GUI from "lil-gui"
+
 
 class TextV2 {
 
@@ -43,7 +45,11 @@ class TextV2 {
             {
                 uniforms: {
                     uResolution: new Uniform(new Vector2(this.dimensions.width, this.dimensions.height).multiplyScalar(this.dimensions.pixelRatio)),
-                    uTime: new Uniform(0.0)                    
+                    uTime: new Uniform(0.0),
+                    uAmp: new Uniform(.95),
+                    uMaxDistance: new Uniform(1.95),
+                    uFrequency: new Uniform(9.25)
+
                 },
                 vertexShader: vertexShader,
                 fragmentShader: fragmentShader
@@ -55,9 +61,29 @@ class TextV2 {
 
         this.experience.scene.add(this.instance)
 
+        // this.initGUI()
+
         this.dimensions.on('resize', this.onResize.bind(this))
         this.time.on('tick', this.update.bind(this))
     }
+
+    // private initGUI(): void {
+    //     const gui = new GUI()
+    //     const folder = gui.addFolder('TextV2 Controls')
+    
+    //     // bind to the .value property of each Uniform
+    //     folder
+    //       .add(this.material.uniforms.uAmp, 'value', 0.0, 2.0, 0.01)
+    //       .name('Amplitude')
+    //     folder
+    //       .add(this.material.uniforms.uMaxDistance, 'value', 0.0, 5.0, 0.01)
+    //       .name('Max Distance')
+    //     folder
+    //       .add(this.material.uniforms.uFrequency, 'value', 0.0, 20.0, 0.1)
+    //       .name('Frequency')
+    
+    //     folder.open()
+    // }
 
     private onResize(): void {
         this.material.uniforms.uResolution.value = new Vector2(this.dimensions.width, this.dimensions.height).multiplyScalar(this.dimensions.pixelRatio)
