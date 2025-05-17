@@ -17,7 +17,7 @@ class LoadingScreen extends EventEmitter {
     private material: ShaderMaterial;
     private instance: Mesh;
 
-    private currentProgress = {value: 0};
+   
     public loadingManager: LoadingManager;
 
     constructor() {
@@ -72,14 +72,12 @@ class LoadingScreen extends EventEmitter {
         const letters = document.querySelectorAll<HTMLDivElement>(
           ".title-text"
         );
-        const titleEl = document.querySelector<HTMLHeadingElement>(
-          ".landing-title"
-        )!;
+        // const titleEl = document.querySelector<HTMLHeadingElement>(
+        //   ".landing-title"
+        // )!;
     
         // calculate how much we need to move the title so it ends up 20px from top/left
-        const { left, top } = titleEl.getBoundingClientRect();
-        const moveX = 20 - left;
-        const moveY = 20 - top;
+
     
         gsap
             .timeline()
