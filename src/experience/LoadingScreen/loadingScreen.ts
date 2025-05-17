@@ -1,12 +1,17 @@
 import { LoadingManager, Mesh, PlaneGeometry, Uniform, ShaderMaterial, Scene} from "three" 
 import Experience from "../experience"
+import EventEmitter from "../../utils/eventEmitter"
 import gsap from "gsap"
+
+
 
 import vertexShader from './shaders/vertex.glsl'
 import fragmentShader from './shaders/fragment.glsl'
 
-class LoadingScreen {
+class LoadingScreen extends EventEmitter {
+    
     private experience: Experience
+
     private scene: Scene;
     private geometry: PlaneGeometry;
     private material: ShaderMaterial;
@@ -16,7 +21,9 @@ class LoadingScreen {
     public loadingManager: LoadingManager;
 
     constructor() {
+        super()
         this.experience = Experience.getInstance();
+        
         this.scene = this.experience.scene;
         this.geometry = new PlaneGeometry(2, 2, 1, 1);
         this.material = new ShaderMaterial(
@@ -87,20 +94,25 @@ class LoadingScreen {
             .to(
                 letters,
                 {
+                
                 opacity: 1,
-                stagger: 0.05,
-                duration: 0.3,
+                stagger: 0.15,
+                duration: 0.75,
                 },
                 ">-0.2"
             )
             // 4) slide the landing‐title into the corner
             .to(
-                titleEl,
+                letters,
                 {
-                x: moveX,
-                y: moveY,
-                duration: 0.8,
+                x: "-0.5em",
+                opacity: 0,
+                stagger: 0.1,
+                duration: 0.5,
                 ease: "power2.inOut",
+                onComplete: () => {
+                    this.trigger('loaded')
+                }
                 },
                 ">-0.1"
             )
@@ -111,6 +123,7 @@ class LoadingScreen {
                 onComplete: () => {
                 // optional: remove the mesh entirely
                 this.scene.remove(this.instance);
+                
                 },
             });
     }
