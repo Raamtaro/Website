@@ -8,6 +8,7 @@ import Camera from './camera.ts';
 import Glass from './Glass/Glass.ts';
 import Resources from '../utils/emitters/resources.ts';
 import TextV2 from './TextV2/textv2.ts';
+import LoadingScreen from './LoadingScreen/loadingScreen.ts';
 
 // import type { ResourceFile } from '../utils/emitters/data/type.ts';
 
@@ -34,6 +35,8 @@ class Experience {
     public text: TextV2 | null = null
     public glass: Glass
 
+    public loadingScreen: LoadingScreen
+
     public resources: Resources
 
     constructor() {
@@ -48,6 +51,7 @@ class Experience {
         this.renderer = new Renderer()
         this.scene = new THREE.Scene()
 
+        this.loadingScreen = new LoadingScreen()
         this.resources = new Resources()
 
         console.log(this.resources)
