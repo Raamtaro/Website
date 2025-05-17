@@ -1,11 +1,12 @@
-import { GLTFLoader, DRACOLoader, GLTF, FontLoader, Font } from "three/examples/jsm/Addons.js";
-import { TextureLoader, Texture } from "three";
+import { GLTFLoader, DRACOLoader, FontLoader } from "three/examples/jsm/Addons.js";
+import { TextureLoader } from "three";
 import EventEmitter from "../eventEmitter";
 import sources from "./data/sources";
 import ModelInfo from "./data/type";
 // import Experience from "../../../experience/experience";
+import type { ResourceFile } from "./data/type";
 
-type ResourceFile = GLTF | Texture | Font
+// type ResourceFile = GLTF | Texture | Font
 
 interface ResourceDictionary {
     [name: string]: ResourceFile
@@ -43,8 +44,10 @@ class Resources extends EventEmitter {
     }
 
     private async startLoading () {
-        const loadPromises = this.sources.map((source) => this.loadResource(source))
 
+        console.log('Loading Resources')
+        const loadPromises = this.sources.map((source) => this.loadResource(source))
+        
         await Promise.all(loadPromises)
 
         if (this.loaded === this.toLoad) {
@@ -80,7 +83,7 @@ class Resources extends EventEmitter {
         } catch (error) {
             console.error(`Error loading ${source.name}:`, error)
         } finally {
-            console.log('done')
+            // console.log('done')
         }
     }
 

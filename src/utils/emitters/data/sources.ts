@@ -9,4 +9,9 @@ export default [
         type: 'gltfModel',
         path: 'models/ogFemale.glb'
     },
+    {
+        name: 'entirely',
+        type: 'font',
+        path: 'fonts/Entirely_Regular.json'
+    }
 ]

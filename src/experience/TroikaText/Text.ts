@@ -1,4 +1,4 @@
-import { FontLoader } from "three/examples/jsm/Addons.js";
+import { FontLoader, Font } from "three/examples/jsm/Addons.js";
 import * as THREE from 'three'
 import { TextGeometry } from "three/examples/jsm/Addons.js";
 import Experience from "../experience";
