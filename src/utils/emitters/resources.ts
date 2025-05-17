@@ -1,11 +1,11 @@
-import { GLTFLoader, DRACOLoader, GLTF } from "three/examples/jsm/Addons.js";
+import { GLTFLoader, DRACOLoader, GLTF, FontLoader, Font } from "three/examples/jsm/Addons.js";
 import { TextureLoader, Texture } from "three";
 import EventEmitter from "../eventEmitter";
 import sources from "./data/sources";
 import ModelInfo from "./data/type";
 // import Experience from "../../../experience/experience";
 
-type ResourceFile = GLTF | Texture
+type ResourceFile = GLTF | Texture | Font
 
 interface ResourceDictionary {
     [name: string]: ResourceFile
@@ -16,8 +16,9 @@ class Resources extends EventEmitter {
     // private experience: Experience 
     private sources: ModelInfo[] = sources
     private dracoLoader: DRACOLoader = new DRACOLoader()
-    private gltfLoader: GLTFLoader 
     private textureLoader: TextureLoader = new TextureLoader()
+    private gltfLoader: GLTFLoader 
+    private fontLoader: FontLoader
     private toLoad: number = this.sources.length
     private loaded: number = 0
 
@@ -28,6 +29,7 @@ class Resources extends EventEmitter {
         super()
         // this.experience = Experience.getInstance()
         this.gltfLoader = new GLTFLoader()
+        this.fontLoader = new FontLoader()
         this.init()
     }
 
@@ -52,7 +54,7 @@ class Resources extends EventEmitter {
     }
 
     private async loadResource (source: ModelInfo) {
-        let loader: GLTFLoader | TextureLoader
+        let loader: GLTFLoader | TextureLoader | FontLoader
         let file: ResourceFile
 
         switch(source.type) {
@@ -62,6 +64,10 @@ class Resources extends EventEmitter {
             
             case 'texture':
                 loader = this.textureLoader
+                break
+
+            case 'font':
+                loader = this.fontLoader
                 break
             
             default:
@@ -74,7 +80,7 @@ class Resources extends EventEmitter {
         } catch (error) {
             console.error(`Error loading ${source.name}:`, error)
         } finally {
-            // console.log('done')
+            console.log('done')
         }
     }
 
